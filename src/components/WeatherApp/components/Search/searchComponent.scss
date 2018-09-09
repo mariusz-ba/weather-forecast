@@ -1,0 +1,29 @@
+.search {
+  background: #e74c3c;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .3);
+  display: grid;
+  grid-template-columns: 1fr 2rem;
+  grid-column-gap: 1rem;
+  padding: 1rem;
+  
+  &__input,
+  &__button {
+    border: 0;
+    outline: 0;
+    color: #ffffff;
+    font-size: 2rem;
+  }
+
+  &__input {
+    background: #e74c3c;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, .75);
+    }
+  }
+
+  &__button {
+    background: transparent;
+    color: rgba(255, 255, 255, .75);
+  }
+}
