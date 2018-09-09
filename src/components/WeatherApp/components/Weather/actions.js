@@ -28,7 +28,6 @@ export const fetchWeather = ({ city }) => {
     try {
       const res = await API.getCurrentWeather({ city });
       const data = res.data;
-      console.log(data);
       const weather = new Weather({
         name: get(data, 'weather[0].description', 'Sunny'),
         city: get(data, 'name', 'London'),

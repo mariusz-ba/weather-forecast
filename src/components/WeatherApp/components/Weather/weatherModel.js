@@ -37,7 +37,6 @@ class Weather {
     if(!(code > 699 && code < 800) && !(code > 899 && code < 1000))
       icon = 'day-' + icon;
     
-    console.log(prefix + icon);
     return prefix + icon;
   }
 
