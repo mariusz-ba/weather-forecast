@@ -5,7 +5,7 @@ import styles from './searchComponent.scss';
 const Search = ({ value, setValue, onSubmit }) => (
   <form class={styles.search} onSubmit={onSubmit}>
     <input class={styles.search__input} placeholder="City" type="text" value={value} onChange={setValue}/>
-    <button class={styles.search__button} type="submit">O</button>
+    <button class={styles.search__button} type="submit"></button>
   </form>
 )
 

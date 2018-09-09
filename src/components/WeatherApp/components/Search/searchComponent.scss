@@ -23,7 +23,13 @@
   }
 
   &__button {
+    cursor: pointer;
     background: transparent;
     color: rgba(255, 255, 255, .75);
+    width: 2rem;
+    background-image: url('/img/search.svg');
+    background-position: center;
+    background-size: fill;
+    background-repeat: no-repeat;
   }
 }

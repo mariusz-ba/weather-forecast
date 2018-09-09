@@ -1,7 +1,8 @@
 .icon {
-  padding: 2rem;
+  text-align: center;
   
   i {
+    padding: 1.5rem 0;
     font-size: 7rem;
   }
 }
@@ -11,4 +12,5 @@
   text-align: center;
   text-transform: capitalize;
   color: rgba(255, 255, 255, .75);
+  padding-bottom: .5rem;
 }
