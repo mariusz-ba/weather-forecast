@@ -34,8 +34,18 @@ class Weather {
     const code = typeof value === 'number' ? value : 800;
     let icon = Icons[code].icon;
 
-    if(!(code > 699 && code < 800) && !(code > 899 && code < 1000))
-      icon = 'day-' + icon;
+    if(!(code > 699 && code < 800) && !(code > 899 && code < 1000)) {
+      // Add 'day' or 'night' prefix based on current time
+      const hour = (new Date()).getHours();
+      if(hour >= 6 && hour < 20)
+        icon = 'day-' + icon;
+      else {
+        if(code === 800)
+          icon = 'night-clear';
+        else
+          icon = 'night-' + icon;
+      }
+    }
     
     return prefix + icon;
   }
