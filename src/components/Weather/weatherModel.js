@@ -1,18 +1,12 @@
+import Icons from './icons';
 import get from 'lodash/get';
 
-export const WeatherIcons = {
-  'icon_sunny': '/img/icons/icon_sunny.svg',
-  'icon_rainy': '/img/icons/icon_rainy.svg',
-  'icon_cloudy': '/img/icons/icon_cloudy.svg',
-  'icon_broken_clouds': '/img/icons/icon_broken_clouds.svg',
-  'icon_partly_cloudy': '/img/icons/icon_partly_cloudy.svg',
-  'icon_clear_sky': '/img/icons/icon_partly_cloudy.svg',
-}
+export const WeatherIcons = Icons;
 
 class Weather {
   constructor(data) {
     const city = get(data, 'city', 'London');
-    const icon = get(data, 'icon', 'icon_sunny');
+    const icon = get(data, 'icon', 800);
     const name = get(data, 'name', 'Sunny');
     const temperature = get(data, 'temperature', 0);
     const temperature_min = get(data, 'temperature_min', 0);
@@ -35,15 +29,20 @@ class Weather {
   }
 
   _getIcon(value) {
-    console.log('value: ',  value);
-    const icon = typeof value === 'string' ? value : 'icon_sunny';
-    if(WeatherIcons[icon])
-      return icon;
-    return 'icon_sunny';
+    // Set appropiate icon class based on code
+    const prefix = 'wi wi-';
+    const code = typeof value === 'number' ? value : 800;
+    let icon = Icons[code].icon;
+
+    if(!(code > 699 && code < 800) && !(code > 899 && code < 1000))
+      icon = 'day-' + icon;
+    
+    console.log(prefix + icon);
+    return prefix + icon;
   }
 
   _getTemperature(value) {
-    return typeof value === 'number' ? value : 30;
+    return typeof value === 'number' ? value : 0;
   }
 }
 

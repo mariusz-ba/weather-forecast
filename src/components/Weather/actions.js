@@ -32,7 +32,7 @@ export const fetchWeather = ({ city }) => {
       const weather = new Weather({
         name: get(data, 'weather[0].description', 'Sunny'),
         city: get(data, 'name', 'London'),
-        icon: `icon_${get(data, 'weather[0].description', 'sunny').replace(/\s+/, '_')}`,
+        icon: get(data, 'weather[0].id', 800),
         temperature: get(data, 'main.temp', 0),
         temperature_min: get(data, 'main.temp_min', 0),
         temperature_max: get(data, 'main.temp_max', 0),

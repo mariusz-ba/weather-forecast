@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styles from './weatherComponent.scss';
+import WeatherIcon from './components/WeatherIcon';
 
 export default class Weather extends Component {
   componentDidMount() {
@@ -9,10 +10,7 @@ export default class Weather extends Component {
 
   render() {
     const { 
-      loading, city, icon, name,
-      temperature,
-      temperature_min,
-      temperature_max,
+      loading, city, icon, name, temperature
     } = this.props;
 
     if(loading)
@@ -21,11 +19,11 @@ export default class Weather extends Component {
     return (
       <div className={styles.weather}>
         <h3 className={styles.weather__city}>{city}</h3>
-        <div className={styles.weather__icon}><img src={icon} alt="icon"/></div>
-        <p className={styles.weather__temp}>{temperature}&deg;</p>
-        <p className={styles.weather__tmin}>{temperature_min}&deg;</p>
-        <p className={styles.weather__tmax}>{temperature_max}&deg;</p>
-        <h4 className={styles.weather__name}>{name}</h4>
+        <p className={styles.weather__temp}>{temperature}<span>&deg;C</span></p>
+        <div className={styles.weather__icon}>
+          <WeatherIcon icon={icon} name={name}/>
+        </div>
+        <h4 className={styles.weather__day}>Sunday</h4>
       </div>
     )
   }
