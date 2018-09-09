@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import styles from './searchComponent.scss';
 
 const Search = ({ value, setValue, onSubmit }) => (
-  <form class={styles.search} onSubmit={onSubmit}>
-    <input class={styles.search__input} placeholder="City" type="text" value={value} onChange={setValue}/>
-    <button class={styles.search__button} type="submit"></button>
+  <form className={styles.search} onSubmit={onSubmit}>
+    <input className={styles.search__input} placeholder="City" type="text" value={value} onChange={setValue}/>
+    <button className={styles.search__button} type="submit"></button>
   </form>
 )
 
