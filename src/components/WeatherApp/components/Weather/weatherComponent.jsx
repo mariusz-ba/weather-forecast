@@ -14,7 +14,7 @@ const Weather = ({ loading, city, icon, name, temperature }) => {
       <div className={styles.weather__icon}>
         <WeatherIcon icon={icon} name={name}/>
       </div>
-      <h4 className={styles.weather__day}>Sunday</h4>
+      <h4 className={styles.weather__day}>{(new Date).toLocaleDateString('en-US', {weekday: 'long'})}</h4>
     </div>
   )
 }
