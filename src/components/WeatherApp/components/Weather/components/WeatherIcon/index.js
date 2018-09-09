@@ -1,3 +1,1 @@
-import WeatherIconComponent from "./weatherIconComponent";
-
-export default WeatherIconComponent;
+export { default as default } from './WeatherIcon';

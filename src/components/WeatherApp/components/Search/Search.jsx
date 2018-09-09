@@ -1,6 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './searchComponent.scss';
+import styles from './Search.scss';
+
+const propTypes = {
+  value: PropTypes.string.isRequired,
+  setValue: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
+}
 
 const Search = ({ value, setValue, onSubmit }) => (
   <form className={styles.search} onSubmit={onSubmit}>
@@ -9,10 +15,6 @@ const Search = ({ value, setValue, onSubmit }) => (
   </form>
 )
 
-Search.propTypes = {
-  value: PropTypes.string.isRequired,
-  setValue: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired
-}
+Search.propTypes = propTypes;
 
 export default Search;

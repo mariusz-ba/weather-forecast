@@ -1,4 +1,4 @@
-import WeatherApp from './weatherAppComponent';
+import WeatherApp from './WeatherApp';
 import { WeatherReducer } from './components/Weather';
 
 module.exports = {

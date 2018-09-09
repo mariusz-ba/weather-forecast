@@ -1,4 +1,4 @@
-import Weather from './weatherComponent';
+import Weather from './Weather';
 import { connect } from 'react-redux';
 import get from 'lodash/get';
 

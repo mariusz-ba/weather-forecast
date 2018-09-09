@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Search from './components/Search';
-import { WeatherContainer, WeatherActions } from './components/Weather'
-import styles from './weatherAppComponent.scss';
+import Weather, { WeatherActions } from './components/Weather'
+import styles from './WeatherApp.scss';
 
 export class WeatherApp extends Component {
   componentDidMount() {
@@ -18,10 +18,10 @@ export class WeatherApp extends Component {
     return (
       <div className={styles.app}>
         <div className={styles.navbar}>
-          <Search onSubmit={this.onSearch}/>
+          <Search onSubmit={this.onSearch} />
         </div>
         <div className={styles.container}>
-          <WeatherContainer/>
+          <Weather />
         </div>
       </div>
     )

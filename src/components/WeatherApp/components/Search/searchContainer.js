@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Search from './searchComponent';
+import Search from './Search';
+
+const propTypes = {
+  onSubmit: PropTypes.func.isRequired
+}
 
 export default class SearchContainer extends Component {
   state = {
@@ -24,6 +28,4 @@ export default class SearchContainer extends Component {
   }
 }
 
-SearchContainer.propTypes = {
-  onSubmit: PropTypes.func.isRequired
-}
+SearchContainer.propTypes = propTypes;

@@ -1,13 +1,13 @@
-import Weather from './weatherComponent';
-import WeatherContainer from './weatherContainer';
-import WeatherReducer from './reducer';
-import * as WeatherActions from './actions';
-import WeatherModel from './weatherModel';
+import weatherComponent from './Weather';
+import weatherContainer from './WeatherContainer';
+import weatherReducer from './reducer';
+import * as weatherActions from './actions';
+import weatherModel from './WeatherModel';
 
-module.exports = {
-  Weather,
-  WeatherContainer,
-  WeatherReducer,
-  WeatherActions,
-  WeatherModel
-}
+export default weatherContainer;
+
+export const Weather = weatherComponent;
+export const WeatherContainer = weatherContainer;
+export const WeatherActions = weatherActions;
+export const WeatherReducer = weatherReducer;
+export const WeatherModel = weatherModel;
