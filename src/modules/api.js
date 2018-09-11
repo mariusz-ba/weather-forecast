@@ -16,7 +16,7 @@ class API {
 }
 
 const api = new API({ 
-  url: 'http://api.openweathermap.org/data/2.5/',
+  url: 'https://api.openweathermap.org/data/2.5/',
   appid: 'df1a22a704e3d1e60e8297208941f42e'
 })
 
