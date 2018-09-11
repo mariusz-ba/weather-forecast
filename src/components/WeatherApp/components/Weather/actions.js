@@ -1,5 +1,5 @@
 import API from '@modules/api';
-import Weather from './WeatherModel';
+import Weather from '../../WeatherModel';
 import get from 'lodash/get';
 
 const REQUEST_WEATHER = 'weather/REQUEST_WEATHER';
