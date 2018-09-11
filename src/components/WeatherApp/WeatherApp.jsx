@@ -3,15 +3,18 @@ import { connect } from 'react-redux';
 
 import Search from './components/Search';
 import Weather, { WeatherActions } from './components/Weather'
+import Forecast, { ForecastActions } from './components/Forecast';
 import styles from './WeatherApp.scss';
 
 export class WeatherApp extends Component {
   componentDidMount() {
     this.props.fetchWeather('Kraków');
+    this.props.fetchForecast('Kraków');
   }
   
   onSearch = city => {
     this.props.fetchWeather(city);
+    this.props.fetchForecast(city);
   }
 
   render() {
@@ -22,6 +25,7 @@ export class WeatherApp extends Component {
         </div>
         <div className={styles.container}>
           <Weather />
+          <Forecast />
         </div>
       </div>
     )
@@ -30,7 +34,8 @@ export class WeatherApp extends Component {
 
 function mapDispatchToProps(dispatch) {
   return {
-    fetchWeather: city => { dispatch(WeatherActions.fetchWeather({ city })) }
+    fetchWeather: city => { dispatch(WeatherActions.fetchWeather({ city })) },
+    fetchForecast: city => { dispatch(ForecastActions.fetchForecast({ city })) }
   }
 }
 
